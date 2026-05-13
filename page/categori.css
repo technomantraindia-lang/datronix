@@ -36,6 +36,10 @@
   gap: 30px;
 }
 
+.product-category-card[id] {
+  scroll-margin-top: 96px;
+}
+
 .product-category-card {
   display: grid;
   grid-template-rows: 280px 1fr;

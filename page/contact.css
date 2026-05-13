@@ -362,6 +362,10 @@ body {
   margin-bottom: 16px;
 }
 
+.form-row-full {
+  grid-template-columns: 1fr;
+}
+
 .contact-form label {
   display: block;
 }
@@ -375,7 +379,8 @@ body {
 }
 
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+.contact-form select {
   width: 100%;
   border: 1px solid var(--contact-border);
   border-radius: 9px;
@@ -388,6 +393,27 @@ body {
 .contact-form input {
   min-height: 54px;
   padding: 0 16px;
+}
+
+.contact-form select {
+  min-height: 54px;
+  padding: 0 44px 0 16px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--contact-soft);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--contact-muted) 50%),
+    linear-gradient(135deg, var(--contact-muted) 50%, transparent 50%);
+  background-position: calc(100% - 22px) 50%, calc(100% - 15px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  font-size: 15px;
+}
+
+.contact-form select option {
+  background: #fff;
+  color: var(--contact-text);
 }
 
 .contact-form textarea {
@@ -406,6 +432,19 @@ body {
   outline: none;
   border-color: rgba(237, 16, 27, 0.45);
   background: #fff;
+  box-shadow: 0 0 0 4px rgba(237, 16, 27, 0.09), 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.contact-form select:focus {
+  outline: none;
+  border-color: rgba(237, 16, 27, 0.45);
+  background-color: #fff;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--contact-muted) 50%),
+    linear-gradient(135deg, var(--contact-muted) 50%, transparent 50%);
+  background-position: calc(100% - 22px) 50%, calc(100% - 15px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
   box-shadow: 0 0 0 4px rgba(237, 16, 27, 0.09), 0 8px 20px rgba(15, 23, 42, 0.06);
 }
 

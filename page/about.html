@@ -9,7 +9,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="about.css">
 </head>
-<body>
+<body class="page-about">
 	<header class="site-header">
 		<div class="container nav-wrap">
 			<a class="brand" href="../index.html" aria-label="Datronix Autotech home">
@@ -25,30 +25,233 @@
 			<nav class="main-nav" id="main-navigation" aria-label="Main navigation">
 				<a href="../index.html">Home</a>
 				<a class="active" href="about.html">About Us</a>
-				<a href="categori.html">Products</a>
+				<div class="nav-dropdown">
+					<button type="button" class="nav-drop-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="products-submenu">Products</button>
+					<div class="dropdown-menu" id="products-submenu" role="menu">
+						<a role="menuitem" href="categori.html">All products</a>
+						<a role="menuitem" href="categori.html#product-das528">DAS528 DaTo Diagnostic Car Scanner</a>
+						<a role="menuitem" href="categori.html#product-das722">DAS722 Da To Diagnostic Car Scanner</a>
+						<a role="menuitem" href="categori.html#product-das-xg3">DAS X-G3 IMMO Programming</a>
+						<a role="menuitem" href="categori.html#product-das701">DaTo DAS701 Super Scanner</a>
+						<a role="menuitem" href="../productpage/DAS723.html">DaTo DAS723 PRO ULTRA</a>
+						<a role="menuitem" href="categori.html#product-dasg3">DaTo DASG3 Key Programmer</a>
+						<a role="menuitem" href="categori.html#product-das1026">Bluetooth OBD2 Scanner DAS1026</a>
+						<a role="menuitem" href="categori.html#product-adas">ADAS RADAR Trio Cipher Calibration</a>
+						<a role="menuitem" href="categori.html#product-das825">DAS825 PRO MAX</a>
+						<a role="menuitem" href="categori.html#product-das623">EV SCANNER DaTo DAS623</a>
+					</div>
+				</div>
 				<a href="service.html">Services</a>
 				<a href="gallery.html">Gallery</a>
 				<a href="blog.html">Blog</a>
 				<a href="contact.html">Contact Us</a>
 			</nav>
 
-			<a class="btn btn-outline btn-whatsapp" href="https://wa.me/919724467330" target="_blank" rel="noreferrer">Inquiry</a>
+			<button type="button" class="btn btn-outline inquiry-open-btn" aria-haspopup="dialog" aria-controls="inquiry-modal" data-wa-url="https://wa.me/919724467330">Inquiry</button>
 		</div>
 	</header>
 
-	<main>
-		<section class="contact-hero">
+	<main class="about-main">
+		<section class="contact-hero about-page-hero" aria-labelledby="about-banner-title">
 			<div class="container hero-content">
 				<nav class="breadcrumb" aria-label="Breadcrumb">
 					<a href="../index.html">Home</a>
 					<span aria-hidden="true">›</span>
 					<span>About Us</span>
 				</nav>
-				<h1>About <span>Us</span></h1>
-				<p>We deliver automotive diagnostic tools, workshop solutions and support built for professional results.</p>
+				<h1 id="about-banner-title">About <span>Us</span></h1>
+				<p>Professional diagnostic tools, workshop solutions and expert support—built for technicians who demand accuracy and reliability.</p>
+			</div>
+		</section>
+
+		<section class="about-home about-page-intro" aria-labelledby="about-intro-title">
+			<div class="container about-grid">
+				<div>
+					<p class="eyebrow">About Datronix Autotech</p>
+					<h2 class="about-heading" id="about-intro-title">Your Partner in <span>Automotive Diagnostic</span><br>Excellence</h2>
+					<p>Datronix Autotech is a trusted name in automotive diagnostic solutions. We provide advanced diagnostic tools, reliable products, and professional support to help workshops, technicians, and businesses deliver better service every day.</p>
+					<ul class="check-list">
+						<li>Wide range of professional diagnostic tools</li>
+						<li>Designed for accuracy, performance &amp; reliability</li>
+						<li>Dedicated support for your business growth</li>
+					</ul>
+					<a class="btn btn-primary" href="contact.html">Know More About Us <span>→</span></a>
+				</div>
+				<div class="about-visual">
+					<div class="about-image-card">
+						<img src="../home/about.png" alt="Datronix Autotech building and branding">
+					</div>
+					<div class="about-highlights">
+						<article class="about-highlight-card">
+							<span class="about-highlight-icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+							</span>
+							<div class="about-highlight-body">
+								<h3>Workshop Ready</h3>
+								<p>Tools selected for daily diagnostic work.</p>
+							</div>
+						</article>
+						<article class="about-highlight-card">
+							<span class="about-highlight-icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+							</span>
+							<div class="about-highlight-body">
+								<h3>Certified Quality</h3>
+								<p>Reliable products backed by testing and support.</p>
+							</div>
+						</article>
+						<article class="about-highlight-card">
+							<span class="about-highlight-icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+							</span>
+							<div class="about-highlight-body">
+								<h3>Fast Guidance</h3>
+								<p>Product selection help for every business need.</p>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="about-stats" aria-label="Company highlights">
+			<div class="container about-stats-grid">
+				<article class="about-stat">
+					<span class="about-stat-icon" aria-hidden="true">
+						<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="16" r="7"/><path d="M10 40a14 14 0 0 1 28 0"/><path d="M16 32a10 10 0 0 0 16 0"/></svg>
+					</span>
+					<strong class="about-stat-num">10K+</strong>
+					<span class="about-stat-title">Happy Customers</span>
+					<span class="about-stat-sub">Across India</span>
+				</article>
+				<article class="about-stat">
+					<span class="about-stat-icon" aria-hidden="true">
+						<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M24 5 41 14v20l-17 9-17-9V14z"/><path d="M7 14l17 9 17-9"/><path d="M24 23v20"/><circle cx="17" cy="30" r="2"/><circle cx="31" cy="30" r="2"/></svg>
+					</span>
+					<strong class="about-stat-num">500+</strong>
+					<span class="about-stat-title">Products</span>
+					<span class="about-stat-sub">Diagnostic range</span>
+				</article>
+				<article class="about-stat">
+					<span class="about-stat-icon" aria-hidden="true">
+						<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22c0-4 3.5-8 8-8h2a4 4 0 0 1 7.4-1.6A8 8 0 0 1 40 20v2a8 8 0 0 1-8 8h-6l-6 5v-5h-2a8 8 0 0 1-8-8v-2Z"/></svg>
+					</span>
+					<strong class="about-stat-num">25+</strong>
+					<span class="about-stat-title">Expert Support</span>
+					<span class="about-stat-sub">Dedicated team</span>
+				</article>
+				<article class="about-stat">
+					<span class="about-stat-icon" aria-hidden="true">
+						<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="18"/><path d="M6 24h36M24 6c6 6 9 12 9 18s-3 12-9 18M24 6c-6 6-9 12-9 18s3 12 9 18"/></svg>
+					</span>
+					<strong class="about-stat-num">500+</strong>
+					<span class="about-stat-title">Cities Served</span>
+					<span class="about-stat-sub">Pan-India presence</span>
+				</article>
+			</div>
+		</section>
+
+		<section class="about-values" id="our-values" aria-labelledby="values-title">
+			<div class="container">
+				<header class="about-block-head">
+					<p class="about-eyebrow">Our Values</p>
+					<h2 id="values-title">The Principles That Drive Us</h2>
+					<span class="about-head-line" aria-hidden="true"></span>
+				</header>
+				<div class="about-values-grid">
+					<article class="about-value-card">
+						<span class="about-value-icon" aria-hidden="true">
+							<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6 38 14v20L24 42 10 34V14Z"/><path d="m16 24 6 6 12-14"/></svg>
+						</span>
+						<h3>Quality First</h3>
+						<p>We stand behind tools that are tested, reliable and built for real workshop conditions.</p>
+					</article>
+					<article class="about-value-card">
+						<span class="about-value-icon" aria-hidden="true">
+							<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 28V14h8v14"/><path d="M26 14h14v10a8 8 0 0 1-8 8h-2"/><path d="M10 34h10"/><circle cx="34" cy="34" r="5"/><path d="M34 32v3l2 1"/></svg>
+						</span>
+						<h3>Innovation</h3>
+						<p>We stay close to new vehicle technologies so your diagnostics stay ahead of the curve.</p>
+					</article>
+					<article class="about-value-card">
+						<span class="about-value-icon" aria-hidden="true">
+							<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="18" r="8"/><path d="M12 40c0-8 5.4-12 12-12s12 4 12 12"/></svg>
+						</span>
+						<h3>Customer Focus</h3>
+						<p>Your workflow matters. We listen, guide and support long after the sale.</p>
+					</article>
+					<article class="about-value-card">
+						<span class="about-value-icon" aria-hidden="true">
+							<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 8v8M24 32v8M8 24h8M32 24h8"/><circle cx="24" cy="24" r="10"/><path d="M18 24h12"/></svg>
+						</span>
+						<h3>Integrity</h3>
+						<p>Honest guidance on products, pricing and what will actually work for your business.</p>
+					</article>
+					<article class="about-value-card">
+						<span class="about-value-icon" aria-hidden="true">
+							<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 38V18l14-10 14 10v20"/><path d="M18 38V26h12v12"/></svg>
+						</span>
+						<h3>Team Spirit</h3>
+						<p>A collaborative crew united by passion for automobiles and technician success.</p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="about-team" id="our-team" aria-labelledby="team-title">
+			<div class="container">
+				<header class="about-block-head">
+					<p class="about-eyebrow">Our Team</p>
+					<h2 id="team-title">Experts Behind Our Success</h2>
+					<span class="about-head-line" aria-hidden="true"></span>
+				</header>
+				<div class="about-team-grid">
+					<article class="about-team-card">
+						<div class="about-team-photo" style="--team-hue: 352"><span>VP</span></div>
+						<h3>Vikram Patel</h3>
+						<p class="about-team-role">Founder &amp; CEO</p>
+						<a class="about-team-li" href="https://www.linkedin.com" target="_blank" rel="noreferrer noopener" aria-label="Vikram Patel on LinkedIn">
+							<svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+						</a>
+					</article>
+					<article class="about-team-card">
+						<div class="about-team-photo" style="--team-hue: 210"><span>PS</span></div>
+						<h3>Priya Sharma</h3>
+						<p class="about-team-role">Chief Technology Officer</p>
+						<a class="about-team-li" href="https://www.linkedin.com" target="_blank" rel="noreferrer noopener" aria-label="Priya Sharma on LinkedIn">
+							<svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+						</a>
+					</article>
+					<article class="about-team-card">
+						<div class="about-team-photo" style="--team-hue: 28"><span>RK</span></div>
+						<h3>Rajesh Kapoor</h3>
+						<p class="about-team-role">Head of Operations</p>
+						<a class="about-team-li" href="https://www.linkedin.com" target="_blank" rel="noreferrer noopener" aria-label="Rajesh Kapoor on LinkedIn">
+							<svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+						</a>
+					</article>
+					<article class="about-team-card">
+						<div class="about-team-photo" style="--team-hue: 200"><span>AIM</span></div>
+						<h3>Anita Mehta</h3>
+						<p class="about-team-role">Sales Director</p>
+						<a class="about-team-li" href="https://www.linkedin.com" target="_blank" rel="noreferrer noopener" aria-label="Anita Mehta on LinkedIn">
+							<svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+						</a>
+					</article>
+					<article class="about-team-card">
+						<div class="about-team-photo" style="--team-hue: 265"><span>SK</span></div>
+						<h3>Suresh Kumar</h3>
+						<p class="about-team-role">Technical Lead</p>
+						<a class="about-team-li" href="https://www.linkedin.com" target="_blank" rel="noreferrer noopener" aria-label="Suresh Kumar on LinkedIn">
+							<svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+						</a>
+					</article>
+				</div>
 			</div>
 		</section>
 	</main>
+
+	<div class="gradient-divider"></div>
 
 	<footer class="site-footer">
 		<div class="container footer-grid">

@@ -12,82 +12,6 @@ body {
   gap: 22px;
 }
 
-.nav-dropdown {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.nav-drop-toggle {
-  position: relative;
-  min-height: 72px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: #fff;
-  font: inherit;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.nav-drop-toggle::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 18px;
-  height: 2px;
-  background: var(--red);
-  transform: scaleX(1);
-}
-
-.nav-drop-toggle.active {
-  color: var(--red);
-}
-
-.dropdown-menu {
-  position: absolute;
-  left: 50%;
-  top: calc(100% - 4px);
-  z-index: 20;
-  width: 230px;
-  padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 10px;
-  background: rgba(5, 8, 13, 0.98);
-  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.38);
-  transform: translate(-50%, 10px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.18s ease, transform 0.18s ease;
-}
-
-.nav-dropdown:hover .dropdown-menu,
-.nav-dropdown:focus-within .dropdown-menu {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translate(-50%, 0);
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 11px 12px;
-  border-radius: 8px;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.dropdown-menu a::after {
-  display: none;
-}
-
-.dropdown-menu a:hover {
-  background: rgba(237, 16, 27, 0.13);
-  color: #fff;
-}
-
 .product-hero {
   position: relative;
   overflow: hidden;
@@ -834,38 +758,6 @@ body {
 
   .function-grid {
     grid-template-columns: 1fr;
-  }
-
-  .nav-dropdown {
-    display: block;
-  }
-
-  .nav-drop-toggle {
-    width: 100%;
-    min-height: 0;
-    padding: 14px;
-    text-align: left;
-  }
-
-  .nav-drop-toggle::after {
-    display: none;
-  }
-
-  .dropdown-menu {
-    position: static;
-    width: 100%;
-    padding: 0 10px 10px;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
-    transform: none;
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .dropdown-menu a {
-    padding: 10px 14px;
   }
 
   .product-hero-grid {
