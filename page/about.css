@@ -1,0 +1,10 @@
+@import url("contact.css");
+.contact-hero {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background:
+    linear-gradient(90deg, rgba(1, 4, 10, 0.94) 0%, rgba(1, 4, 10, 0.84) 45%, rgba(1, 4, 10, 0.55) 72%, rgba(1, 4, 10, 0.2) 100%),
+    #020811 url("../home/about copy.png") right center / cover no-repeat;
+}
+
