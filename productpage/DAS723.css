@@ -92,7 +92,7 @@ body {
   position: relative;
   overflow: hidden;
   color: #fff;
-  padding: 18px 0 72px;
+  padding: 48px 0 42px;
   background:
     linear-gradient(90deg, rgba(2, 9, 18, 0.98) 0%, rgba(2, 13, 26, 0.96) 48%, rgba(2, 13, 26, 0.9) 100%),
     radial-gradient(circle at 72% 28%, rgba(18, 78, 122, 0.25), transparent 30%),
@@ -367,7 +367,7 @@ body {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 14px;
-  margin: 0 auto -126px;
+  margin: 18px auto 0;
   padding: 14px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
@@ -420,7 +420,7 @@ body {
 
 .feature-overview-section {
   position: relative;
-  padding: 142px 0 90px;
+  padding: 72px 0 90px;
   background:
     radial-gradient(circle at 10% 10%, rgba(237, 16, 27, 0.08), transparent 25%),
     radial-gradient(circle at 92% 16%, rgba(15, 23, 42, 0.08), transparent 28%),
@@ -802,7 +802,7 @@ body {
 
   .trust-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    margin-bottom: -168px;
+    margin: 18px auto 0;
   }
 
   .trust-strip article:nth-child(2n) {
@@ -810,7 +810,7 @@ body {
   }
 
   .feature-overview-section {
-    padding-top: 186px;
+    padding-top: 62px;
   }
 }
 
@@ -946,7 +946,7 @@ body {
   }
 
   .product-hero {
-    padding-top: 10px;
+    padding-top: 28px;
     padding-bottom: 40px;
   }
 
