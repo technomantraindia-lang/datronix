@@ -192,76 +192,6 @@ main.about-main {
 }
 
 /* —— Team —— */
-.about-team {
-  padding: clamp(72px, 10vw, 108px) 0 clamp(88px, 12vw, 128px);
-  background: linear-gradient(180deg, #eef2f8 0%, #e8edf5 48%, #f0f3f9 100%);
-}
-
-.about-team-grid {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 22px;
-}
-
-.about-team-card {
-  text-align: center;
-  padding: 24px 20px 26px;
-  border-radius: 18px;
-  background: linear-gradient(165deg, #ffffff 0%, #f9fafc 100%);
-  border: 1px solid rgba(223, 229, 238, 0.95);
-  box-shadow: 0 16px 44px rgba(15, 23, 42, 0.08);
-  transition: transform 0.24s ease, box-shadow 0.24s ease;
-}
-
-.about-team-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 26px 56px rgba(15, 23, 42, 0.12);
-}
-
-.about-team-photo {
-  aspect-ratio: 3 / 4;
-  max-width: 200px;
-  margin: 0 auto 18px;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(
-    148deg,
-    hsl(var(--team-hue, 352), 28%, 24%) 0%,
-    hsl(var(--team-hue, 352), 32%, 12%) 100%
-  );
-  color: rgba(255, 255, 255, 0.88);
-  font-size: clamp(26px, 5vw, 34px);
-  font-weight: 900;
-  letter-spacing: 0.04em;
-}
-
-.about-team-card h3 {
-  margin: 0 0 6px;
-  font-family: "Inter", Arial, sans-serif;
-  font-size: 17px;
-  font-weight: 800;
-  color: #0a0e14;
-}
-
-.about-team-role {
-  margin: 0 0 14px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #64748b;
-}
-
-.about-team-li {
-  display: inline-flex;
-  color: #0a66c2;
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.about-team-li:hover {
-  color: #004182;
-  transform: scale(1.06);
-}
-
 /* —— Responsive —— */
 @media (max-width: 1100px) {
   .page-about .about-page-intro .about-visual {
@@ -272,9 +202,6 @@ main.about-main {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .about-team-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 900px) {
@@ -282,9 +209,6 @@ main.about-main {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .about-team-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 720px) {
@@ -299,14 +223,9 @@ main.about-main {
     grid-template-columns: 1fr;
   }
 
-  .about-values-grid,
-  .about-team-grid {
+  .about-values-grid {
     grid-template-columns: 1fr;
     max-width: 380px;
     margin-inline: auto;
-  }
-
-  .about-team-photo {
-    max-width: 100%;
   }
 }
