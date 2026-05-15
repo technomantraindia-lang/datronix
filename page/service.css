@@ -912,9 +912,39 @@ button.header-whatsapp {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: minmax(260px, 1.7fr) minmax(120px, 0.75fr) minmax(150px, 0.9fr) minmax(150px, 0.9fr) minmax(260px, 1.35fr);
-  gap: 56px;
+  grid-template-columns:
+    minmax(220px, 1.35fr)
+    minmax(108px, 0.58fr)
+    minmax(min(100%, 320px), 1.55fr)
+    minmax(200px, 1.12fr);
+  gap: clamp(32px, 4vw, 56px);
   padding: 70px 0 52px;
+  align-items: start;
+}
+
+/* Two-column layout for long "Our Products" link lists (footer column 3) */
+.footer-grid > div:nth-child(3) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(130px, 1fr));
+  column-gap: clamp(18px, 3vw, 36px);
+  row-gap: 6px;
+  align-content: start;
+}
+
+.footer-grid > div:nth-child(3) > h3 {
+  grid-column: 1 / -1;
+}
+
+.footer-grid > div:nth-child(3) > a {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0;
+  padding: 3px 0;
+  line-height: 1.45;
+  hyphens: none;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .footer-brand {
@@ -936,7 +966,110 @@ button.header-whatsapp {
 .site-footer a {
   color: rgba(255, 255, 255, 0.78);
   font-size: 14px;
-  line-height: 1.7;
+  line-height: 1.65;
+}
+
+.footer-grid > div:nth-child(4) p,
+.footer-grid > div:nth-child(4) a {
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: none;
+}
+
+.footer-grid > div:nth-child(4) a {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+/* Footer list icons — mirror style.css */
+.footer-grid > div:nth-child(2) a {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.footer-grid > div:nth-child(2) a::before,
+.footer-grid > div:nth-child(3) > a::before,
+.footer-grid > div:nth-child(4) p::before,
+.footer-grid > div:nth-child(4) a::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 3px;
+  background: rgba(255, 255, 255, 0.55);
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  transition: background 0.2s ease;
+}
+
+.footer-grid > div:nth-child(2) a:hover::before,
+.footer-grid > div:nth-child(3) > a:hover::before,
+.footer-grid > div:nth-child(4) a:hover::before {
+  background: #fff;
+}
+
+.footer-grid > div:nth-child(4) p {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0 0 12px;
+}
+
+.footer-grid > div:nth-child(4) p::before {
+  margin-top: 2px;
+}
+
+.footer-grid > div:nth-child(2) a:nth-of-type(1)::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z'/%3E%3C/svg%3E");
+}
+
+.footer-grid > div:nth-child(2) a:nth-of-type(2)::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M12 12a4 4 0 100-8 4 4 0 000 8zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M12 12a4 4 0 100-8 4 4 0 000 8zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E");
+}
+
+.footer-grid > div:nth-child(2) a:nth-of-type(3)::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z'/%3E%3C/svg%3E");
+}
+
+.footer-grid > div:nth-child(2) a:nth-of-type(4)::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M20 4H4c-1.1 0-1.99.9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M20 4H4c-1.1 0-1.99.9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z'/%3E%3C/svg%3E");
+}
+
+.footer-grid > div:nth-child(3) > a::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M22.7 2.3a3.5 3.5 0 00-5 0l-2 2 .5.5L8.5 12.5a4.5 4.5 0 106.4 6.4l7.7-7.7.5.5 2-2a3.5 3.5 0 000-5l-1.4 1.4a1 1 0 11-1.4-1.4l1.4-1.4zM7 18a2.5 2.5 0 113.5-3.5A2.5 2.5 0 017 18z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M22.7 2.3a3.5 3.5 0 00-5 0l-2 2 .5.5L8.5 12.5a4.5 4.5 0 106.4 6.4l7.7-7.7.5.5 2-2a3.5 3.5 0 000-5l-1.4 1.4a1 1 0 11-1.4-1.4l1.4-1.4zM7 18a2.5 2.5 0 113.5-3.5A2.5 2.5 0 017 18z'/%3E%3C/svg%3E");
+}
+
+.footer-grid > div:nth-child(4) p::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 4a4 4 0 100 8 4 4 0 000-8z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 4a4 4 0 100 8 4 4 0 000-8z'/%3E%3C/svg%3E");
+}
+
+.footer-grid > div:nth-child(4) a[href^="tel:"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.4 21 3 14.6 3 6.5 3 5.9 3.4 5.5 4 5.5h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.2 1.1l-2.3 2.4z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.4 21 3 14.6 3 6.5 3 5.9 3.4 5.5 4 5.5h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.2 1.1l-2.3 2.4z'/%3E%3C/svg%3E");
+}
+
+.footer-grid > div:nth-child(4) a[href^="mailto:"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M20 4H4c-1.1 0-1.99.9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M20 4H4c-1.1 0-1.99.9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z'/%3E%3C/svg%3E");
+}
+
+.footer-grid > div:nth-child(4) a[href^="https://"]::before,
+.footer-grid > div:nth-child(4) a[href^="http://"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M12 2a10 10 0 100 20 10 10 0 000-20zm6.9 8h-2.1A12 12 0 006 17.1V19a8 8 0 0112.9-9zm-15.8 2h2.1A12 12 0 0018 6.9V5a8 8 0 01-12.9 9zM12 4c1.5 0 2.9.4 4.1 1.1A12 12 0 007.9 17.9 8 8 0 0112 4zm0 16c-1.5 0-2.9-.4-4.1-1.1A12 12 0 0016.1 6.1 8 8 0 0112 20z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M12 2a10 10 0 100 20 10 10 0 000-20zm6.9 8h-2.1A12 12 0 006 17.1V19a8 8 0 0112.9-9zm-15.8 2h2.1A12 12 0 0018 6.9V5a8 8 0 01-12.9 9zM12 4c1.5 0 2.9.4 4.1 1.1A12 12 0 007.9 17.9 8 8 0 0112 4zm0 16c-1.5 0-2.9-.4-4.1-1.1A12 12 0 0016.1 6.1 8 8 0 0112 20z'/%3E%3C/svg%3E");
 }
 
 .site-footer h3 {
@@ -967,6 +1100,12 @@ button.header-whatsapp {
 .site-footer a:hover {
   color: #fff;
   transform: translateX(5px);
+}
+
+.footer-grid > div:nth-child(2) a,
+.footer-grid > div:nth-child(3) > a,
+.footer-grid > div:nth-child(4) a {
+  display: flex;
 }
 
 .socials {
@@ -1239,6 +1378,10 @@ button.header-whatsapp {
     align-items: flex-start;
     flex-direction: column;
   }
+
+  .footer-grid > div:nth-child(3) {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Mobile responsive hardening */
@@ -1272,7 +1415,8 @@ body {
 .help-inner p,
 .site-footer a,
 .site-footer p {
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 @media (max-width: 860px) {

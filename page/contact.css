@@ -755,10 +755,14 @@ body {
 .info-card p,
 .support-card p,
 .help-inner h2,
-.help-inner p,
+.help-inner p {
+  overflow-wrap: anywhere;
+}
+
 .site-footer a,
 .site-footer p {
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 @media (max-width: 720px) {
