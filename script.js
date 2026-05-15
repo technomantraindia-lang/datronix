@@ -286,10 +286,16 @@ document.querySelectorAll(".contact-form").forEach((contactForm) => {
 document.querySelectorAll(".product-gallery").forEach((gallery) => {
   const mainImage = gallery.querySelector(".main-product-image");
   const thumbs = Array.from(gallery.querySelectorAll(".thumb"));
+  const thumbRow = gallery.querySelector(".thumb-row");
   const prevButton = gallery.querySelector(".gallery-arrow:first-of-type");
   const nextButton = gallery.querySelector(".gallery-arrow:last-of-type");
 
-  if (!mainImage || thumbs.length === 0) return;
+  if (!mainImage) return;
+
+  if (thumbs.length <= 1) {
+    thumbRow?.classList.add("thumb-row--single");
+    return;
+  }
 
   let activeIndex = Math.max(0, thumbs.findIndex((thumb) => thumb.classList.contains("active")));
 

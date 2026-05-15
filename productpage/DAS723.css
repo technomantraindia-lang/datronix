@@ -132,6 +132,11 @@ body {
   margin-top: 8px;
 }
 
+/* One product image: hide duplicate thumbnail strip + prev/next (set by script.js) */
+.thumb-row.thumb-row--single {
+  display: none;
+}
+
 .thumb {
   display: grid;
   place-items: center;
