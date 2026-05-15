@@ -71,6 +71,11 @@ const ensureInquiryModal = () => {
             <option value="ADAS RADAR Trio Cipher Calibration">ADAS RADAR Trio Cipher Calibration</option>
             <option value="DAS825 PRO MAX">DAS825 PRO MAX</option>
             <option value="EV SCANNER DaTo DAS623">EV SCANNER DaTo DAS623</option>
+            <option value="DaTo DIGD603 GDI &amp; Piezo Injector Cleaner and Tester">DaTo DIGD603 GDI &amp; Piezo Injector Cleaner and Tester</option>
+            <option value="DaTo PTIW1001 Air Impact Wrench">DaTo PTIW1001 Air Impact Wrench</option>
+            <option value="DaTo PTIW1011 Heavy Duty Air Impact Wrench">DaTo PTIW1011 Heavy Duty Air Impact Wrench</option>
+            <option value="DaTo CSST10I15 CSST10I10 Screw Air Compressor">DaTo CSST10I15 CSST10I10 Screw Air Compressor</option>
+            <option value="DaTo DHP 2050 Shop Press 50 Ton">DaTo DHP 2050 Shop Press 50 Ton</option>
           </select>
         </label>
         <label>Message<span class="sr-only"> (required)</span>
