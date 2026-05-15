@@ -729,3 +729,91 @@ body {
     height: 220px;
   }
 }
+
+/* Mobile responsive hardening */
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.contact-grid,
+.contact-sidebar,
+.message-area,
+.info-card article,
+.support-card,
+.contact-form,
+.help-inner,
+.help-actions {
+  min-width: 0;
+}
+
+.breadcrumb,
+.contact-hero h1,
+.contact-hero p,
+.section-heading h2,
+.info-card p,
+.support-card p,
+.help-inner h2,
+.help-inner p,
+.site-footer a,
+.site-footer p {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 720px) {
+  .hero-points > div,
+  .info-card article,
+  .support-card {
+    border-radius: 12px;
+  }
+
+  .help-inner h2 span {
+    white-space: normal;
+  }
+
+  .contact-form button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact-hero {
+    min-height: 320px;
+  }
+
+  .contact-hero h1 {
+    font-size: clamp(38px, 12vw, 48px);
+    line-height: 1;
+  }
+
+  .contact-hero p {
+    font-size: 16px;
+  }
+
+  .hero-points > div,
+  .info-card article,
+  .support-card {
+    grid-template-columns: 40px minmax(0, 1fr);
+    padding: 12px;
+  }
+
+  .feature-icon,
+  .info-icon,
+  .support-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .contact-sidebar,
+  .message-area,
+  .contact-form {
+    padding: 14px;
+  }
+
+  .help-inner {
+    min-height: 0;
+    padding: 42px 0;
+  }
+}

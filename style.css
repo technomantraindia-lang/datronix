@@ -3269,3 +3269,172 @@ button.inquiry-open-btn {
 .inquiry-modal-done:hover {
   background: rgba(255, 255, 255, 0.14);
 }
+
+/* Responsive hardening */
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  overflow-wrap: break-word;
+}
+
+.main-nav,
+.dropdown-menu,
+.hero-copy,
+.about-grid,
+.category-card,
+.product-card,
+.testimonial-card,
+.service-cards article,
+.credential-grid > *,
+.newsletter-grid,
+.footer-grid > * {
+  min-width: 0;
+}
+
+.site-footer a,
+.site-footer p,
+.category-card h3,
+.category-card p,
+.testimonial-card p,
+.credential-grid strong {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1180px) {
+  .hero-copy {
+    transform: none;
+  }
+}
+
+@media (max-width: 820px) {
+  .site-header {
+    position: sticky;
+  }
+
+  .nav-wrap {
+    gap: 12px;
+  }
+
+  .site-header .inquiry-open-btn {
+    display: none;
+  }
+
+  .main-nav {
+    max-height: calc(100vh - 86px);
+    overflow-y: auto;
+  }
+
+  .dropdown-menu {
+    max-height: none;
+  }
+
+  .hero {
+    min-height: 560px;
+  }
+
+  .hero-grid {
+    display: flex;
+    min-height: 560px;
+    align-items: center;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .trust-row div,
+  .number-grid div,
+  .credential-grid > div {
+    min-height: 0;
+  }
+
+  .newsletter-grid {
+    gap: 24px;
+  }
+
+  .footer-grid {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 540px) {
+  .container,
+  .site-header .container,
+  .site-footer .container {
+    width: min(100% - 24px, 1180px);
+  }
+
+  .nav-wrap {
+    min-height: 68px;
+  }
+
+  .main-nav {
+    left: 12px;
+    right: 12px;
+    top: 68px;
+  }
+
+  .hero {
+    min-height: 520px;
+  }
+
+  .hero-grid {
+    min-height: 520px;
+    padding: 70px 0 64px;
+  }
+
+  .hero h1 {
+    font-size: clamp(30px, 10vw, 38px);
+    line-height: 1.08;
+  }
+
+  .hero-actions .btn,
+  .cta-actions .btn {
+    min-width: 0;
+  }
+
+  .trust-row div,
+  .about-highlight-card,
+  .number-grid div {
+    padding-inline: 14px;
+  }
+
+  .category-card,
+  .product-card,
+  .testimonial-card,
+  .newsletter-grid {
+    max-width: 100%;
+  }
+
+  .product-photo {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .newsletter-grid {
+    padding: 20px 16px;
+  }
+
+  .footer-bottom .container div {
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+
+  .inquiry-modal {
+    padding: 12px;
+  }
+
+  .inquiry-modal-dialog {
+    padding: 24px 18px 20px;
+  }
+
+  .inquiry-form-actions,
+  .inquiry-submit,
+  .inquiry-modal-wa-link {
+    width: 100%;
+  }
+}

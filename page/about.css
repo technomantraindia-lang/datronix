@@ -229,3 +229,41 @@ main.about-main {
     margin-inline: auto;
   }
 }
+
+/* Mobile responsive hardening */
+.about-stats-grid,
+.about-values-grid,
+.about-stat,
+.about-value-card {
+  min-width: 0;
+}
+
+.about-block-head h2,
+.about-value-card h3,
+.about-value-card p,
+.about-stat-title,
+.about-stat-sub {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 720px) {
+  .page-about .contact-hero.about-page-hero {
+    min-height: 330px;
+    background-position: 62% center;
+  }
+
+  .page-about .contact-hero.about-page-hero .hero-content {
+    padding: 70px 0 78px;
+  }
+}
+
+@media (max-width: 540px) {
+  .about-value-card {
+    padding: 24px 16px 26px;
+    border-radius: 12px;
+  }
+
+  .about-block-head {
+    margin-bottom: 30px;
+  }
+}
