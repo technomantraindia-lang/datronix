@@ -315,3 +315,44 @@ document.querySelectorAll(".product-gallery").forEach((gallery) => {
     nextButton.addEventListener("click", () => showImage(activeIndex + 1));
   }
 });
+
+document.querySelectorAll(".related-carousel").forEach((carousel) => {
+  const prevButton = carousel.querySelector(".related-arrow.prev");
+  const nextButton = carousel.querySelector(".related-arrow.next");
+
+  const getCards = () => Array.from(carousel.querySelectorAll(".related-product-card"));
+
+  const moveCards = (direction) => {
+    const cards = getCards();
+    if (cards.length < 2) return;
+
+    if (direction === "next") {
+      carousel.insertBefore(cards[0], nextButton);
+      return;
+    }
+
+    carousel.insertBefore(cards[cards.length - 1], cards[0]);
+  };
+
+  prevButton?.addEventListener("click", () => moveCards("prev"));
+  nextButton?.addEventListener("click", () => moveCards("next"));
+
+  getCards().forEach((card) => {
+    card.addEventListener("click", (event) => {
+      if (event.target.closest("a")) return;
+
+      const href = card.dataset.href;
+      if (href) window.location.href = href;
+    });
+
+    card.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+
+      const href = card.dataset.href;
+      if (!href) return;
+
+      event.preventDefault();
+      window.location.href = href;
+    });
+  });
+});

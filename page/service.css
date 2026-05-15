@@ -227,12 +227,12 @@ svg {
   left: 50%;
   top: calc(100% - 4px);
   z-index: 60;
-  width: min(320px, calc(100vw - 40px));
-  max-height: min(70vh, 420px);
-  overflow-x: hidden;
-  overflow-y: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  width: min(680px, calc(100vw - 32px));
+  max-height: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  overflow: visible;
   padding: 10px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 10px;
@@ -252,7 +252,9 @@ svg {
 }
 
 .dropdown-menu a {
-  display: block;
+  display: flex;
+  align-items: center;
+  min-height: 42px;
   padding: 11px 12px;
   border-radius: 8px;
   color: rgba(255, 255, 255, 0.82);
@@ -924,8 +926,8 @@ button.header-whatsapp {
 
 .footer-brand img {
   width: auto;
-  height: clamp(44px, 5vw, 54px);
-  max-width: min(220px, 85%);
+  height: clamp(56px, 6vw, 68px);
+  max-width: min(280px, 95%);
   object-fit: contain;
   object-position: left center;
 }
@@ -1113,6 +1115,7 @@ button.header-whatsapp {
     position: static;
     width: 100%;
     max-height: none;
+    display: block;
     overflow: visible;
     padding: 0 10px 10px;
     margin: 0;
