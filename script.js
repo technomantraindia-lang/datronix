@@ -1,6 +1,11 @@
 const navToggle = document.querySelector(".nav-toggle");
 const mainNav = document.querySelector(".main-nav");
 const navDropdowns = document.querySelectorAll(".nav-dropdown");
+const heroVideo = document.querySelector(".hero-video");
+
+if (heroVideo) {
+  heroVideo.playbackRate = 0.75;
+}
 
 const closeMenu = () => {
   if (!mainNav || !navToggle) return;
