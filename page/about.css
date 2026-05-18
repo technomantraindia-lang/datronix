@@ -258,6 +258,86 @@ main.about-main {
 }
 
 @media (max-width: 540px) {
+  .page-about .about-page-intro.about-home {
+    padding-top: 62px;
+  }
+
+  .page-about .about-page-intro .about-grid {
+    gap: 34px;
+  }
+
+  .about-stats {
+    padding: 42px 0 46px;
+    background:
+      radial-gradient(circle at 0% 10%, rgba(237, 16, 27, 0.22), transparent 34%),
+      radial-gradient(circle at 100% 90%, rgba(44, 124, 255, 0.12), transparent 34%),
+      linear-gradient(180deg, #05070c 0%, #0b1018 100%);
+  }
+
+  .about-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    text-align: left;
+  }
+
+  .about-stat {
+    position: relative;
+    min-height: 154px;
+    align-content: start;
+    justify-items: start;
+    gap: 7px;
+    padding: 18px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025)),
+      rgba(10, 15, 22, 0.88);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.22);
+    overflow: hidden;
+  }
+
+  .about-stat::after {
+    content: "";
+    position: absolute;
+    inset: auto -24px -34px auto;
+    width: 86px;
+    height: 86px;
+    border-radius: 999px;
+    background: rgba(237, 16, 27, 0.13);
+    filter: blur(4px);
+  }
+
+  .about-stat-icon {
+    width: 46px;
+    height: 46px;
+    margin: 0 0 8px;
+    border: 1px solid rgba(237, 16, 27, 0.72);
+    border-radius: 999px;
+    background: rgba(237, 16, 27, 0.08);
+    box-shadow: 0 12px 26px rgba(237, 16, 27, 0.14);
+  }
+
+  .about-stat-icon svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .about-stat-num {
+    font-size: 31px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .about-stat-title {
+    font-size: 14px;
+    line-height: 1.25;
+  }
+
+  .about-stat-sub {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
   .about-value-card {
     padding: 24px 16px 26px;
     border-radius: 12px;

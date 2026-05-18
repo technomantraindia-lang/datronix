@@ -1054,28 +1054,127 @@ body {
 }
 
 @media (max-width: 540px) {
+  body {
+    background: #f3f6fa;
+  }
+
   .product-hero .container,
   .feature-overview-section .container {
     width: min(100% - 24px, 1320px);
   }
 
+  .product-hero {
+    padding: 18px 0 28px;
+    background:
+      radial-gradient(circle at 10% 8%, rgba(237, 16, 27, 0.2), transparent 34%),
+      radial-gradient(circle at 92% 20%, rgba(0, 113, 184, 0.22), transparent 35%),
+      linear-gradient(180deg, #05101c 0%, #07111d 48%, #02060b 100%);
+  }
+
+  .product-hero-grid {
+    gap: 16px;
+    padding-top: 8px;
+    padding-bottom: 12px;
+  }
+
   .breadcrumb {
-    font-size: 10px;
+    display: none;
+  }
+
+  .product-gallery {
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.045);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
+  }
+
+  .hero-product-card {
+    min-height: 190px;
+    padding: 8px;
+    border-radius: 14px;
+    background:
+      radial-gradient(circle at 50% 46%, rgba(255, 255, 255, 0.12), transparent 62%),
+      rgba(255, 255, 255, 0.035);
+  }
+
+  .hero-product-card img {
+    max-height: 190px;
+  }
+
+  .product-copy {
+    padding: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .kicker {
+    margin: 0 0 7px;
+    color: #ff5962;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .subtitle {
+    margin: 8px 0 12px;
+    font-size: 13px;
   }
 
   .product-copy h1 {
-    font-size: clamp(22px, 7vw, 26px);
+    font-family: "Inter", Arial, sans-serif;
+    font-size: clamp(22px, 7vw, 28px);
+    line-height: 1.12;
   }
 
   .product-copy h1 span {
-    font-size: clamp(32px, 10vw, 40px);
-    line-height: 1;
+    margin-top: 4px;
+    font-size: clamp(30px, 9vw, 38px);
+    line-height: 1.03;
   }
 
   .update-badge {
     width: 100%;
     justify-content: center;
     text-align: center;
+    min-height: 38px;
+    border-radius: 9px;
+    font-size: 12px;
+  }
+
+  .description {
+    margin: 14px 0 14px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .feature-list {
+    gap: 8px;
+    font-size: 12.5px;
+  }
+
+  .purchase-box {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .purchase-box strong {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .purchase-box .btn {
+    min-width: 0;
+    min-height: 42px;
+    padding-inline: 10px;
+    border-radius: 8px;
+    font-size: 12px;
   }
 
   .thumb-row {
@@ -1089,23 +1188,169 @@ body {
 
   .spec-panel,
   .trust-strip {
+    border-radius: 16px;
+  }
+
+  .spec-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.055);
+  }
+
+  .spec-panel article {
+    grid-template-columns: 34px minmax(0, 1fr);
+    min-height: 62px;
+    padding: 10px;
     border-radius: 12px;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .spec-icon {
+    width: 32px;
+    height: 32px;
+    border-color: rgba(237, 16, 27, 0.45);
+    background: rgba(237, 16, 27, 0.1);
+  }
+
+  .spec-panel strong {
+    font-size: 12px;
+  }
+
+  .spec-panel small {
+    font-size: 10.5px;
+  }
+
+  .trust-strip {
+    grid-template-columns: 1fr;
+    gap: 9px;
+    padding: 10px;
+  }
+
+  .trust-strip article {
+    min-height: 62px;
+    padding: 11px 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.055);
+  }
+
+  .feature-overview-section {
+    padding: 34px 0 44px;
+    background:
+      radial-gradient(circle at 100% 4%, rgba(237, 16, 27, 0.08), transparent 32%),
+      linear-gradient(90deg, rgba(237, 16, 27, 0.04) 0 1px, transparent 1px 100%),
+      linear-gradient(180deg, #f8fbff 0%, #eef4fb 100%);
+    background-size: auto, 48px 48px, auto;
+  }
+
+  .feature-tile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 18px;
   }
 
   .feature-tile-grid article,
   .function-grid article {
     min-height: 0;
-    padding: 22px 16px;
+    padding: 15px 10px;
+    border-radius: 12px;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+  }
+
+  .feature-tile-grid span {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    font-size: 11px;
+  }
+
+  .feature-tile-grid h3 {
+    font-size: 13px;
+  }
+
+  .feature-tile-grid p {
+    font-size: 11.5px;
+    line-height: 1.4;
+  }
+
+  .product-info-panel,
+  .function-block {
+    border-radius: 16px;
+    box-shadow: 0 16px 38px rgba(15, 23, 42, 0.08);
+  }
+
+  .info-tabs a {
+    min-height: 48px;
+    font-size: 13px;
+  }
+
+  .info-content-grid {
+    gap: 14px;
+    padding: 12px;
+  }
+
+  .overview-card,
+  .spec-table-card {
+    padding: 16px;
+    border: 1px solid rgba(15, 23, 42, 0.07);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.78);
   }
 
   .overview-card h3,
   .spec-table-card h3,
   .function-block h3 {
-    font-size: 22px;
+    margin-bottom: 10px;
+    font-family: "Inter", Arial, sans-serif;
+    font-size: 18px;
   }
 
   .overview-card li {
-    font-size: 15px;
+    padding-left: 16px;
+    font-size: 12.5px;
+    line-height: 1.58;
+  }
+
+  .overview-card li::before {
+    top: 7px;
+    width: 6px;
+    height: 6px;
+  }
+
+  .spec-table-card {
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .spec-table-card div {
+    padding: 9px 0;
+  }
+
+  .spec-table-card dt,
+  .spec-table-card dd {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .function-block {
+    margin-top: 18px;
+    padding: 16px;
+  }
+
+  .function-grid {
+    gap: 10px;
+  }
+
+  .function-grid article {
+    padding: 14px;
+  }
+
+  .function-grid strong {
+    font-size: 13px;
+  }
+
+  .function-grid span {
+    font-size: 12px;
+    line-height: 1.45;
   }
 
   .related-carousel a {
@@ -1116,5 +1361,11 @@ body {
   .footer-bottom .container div {
     flex-wrap: wrap;
     gap: 12px 18px;
+  }
+
+  .site-footer a,
+  .site-footer p {
+    overflow-wrap: break-word;
+    word-break: normal;
   }
 }

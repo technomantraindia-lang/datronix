@@ -1,13 +1,25 @@
 const navToggle = document.querySelector(".nav-toggle");
 const mainNav = document.querySelector(".main-nav");
+const navDropdowns = document.querySelectorAll(".nav-dropdown");
 
 const closeMenu = () => {
   if (!mainNav || !navToggle) return;
   mainNav.classList.remove("open");
   navToggle.setAttribute("aria-expanded", "false");
+  navDropdowns.forEach((dropdown) => {
+    dropdown.classList.remove("open");
+    dropdown.querySelector(".nav-drop-toggle")?.setAttribute("aria-expanded", "false");
+  });
 };
 
 if (navToggle && mainNav) {
+  const desktopInquiryButton = document.querySelector(".site-header .inquiry-open-btn");
+  if (desktopInquiryButton && !mainNav.querySelector(".mobile-inquiry-open-btn")) {
+    const mobileInquiryButton = desktopInquiryButton.cloneNode(true);
+    mobileInquiryButton.classList.add("mobile-inquiry-open-btn");
+    mainNav.appendChild(mobileInquiryButton);
+  }
+
   navToggle.addEventListener("click", () => {
     const isOpen = mainNav.classList.toggle("open");
     navToggle.setAttribute("aria-expanded", String(isOpen));
@@ -15,6 +27,18 @@ if (navToggle && mainNav) {
 
   mainNav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", closeMenu);
+  });
+
+  navDropdowns.forEach((dropdown) => {
+    const toggle = dropdown.querySelector(".nav-drop-toggle");
+    if (!toggle) return;
+
+    toggle.addEventListener("click", (event) => {
+      if (window.innerWidth > 820) return;
+      event.preventDefault();
+      const isOpen = dropdown.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+    });
   });
 
   window.addEventListener("resize", () => {
@@ -73,8 +97,8 @@ const ensureInquiryModal = () => {
             <option value="EV SCANNER DaTo DAS623">EV SCANNER DaTo DAS623</option>
             <option value="DaTo DIGD603 GDI &amp; Piezo Injector Cleaner and Tester">DaTo DIGD603 GDI &amp; Piezo Injector Cleaner and Tester</option>
             <option value="DaTo PTIW1001 Air Impact Wrench">DaTo PTIW1001 Air Impact Wrench</option>
-            <option value="DaTo PTIW1011 Heavy Duty Air Impact Wrench">DaTo PTIW1011 Heavy Duty Air Impact Wrench</option>
-            <option value="DaTo CSST10I15 CSST10I10 Screw Air Compressor">DaTo CSST10I15 CSST10I10 Screw Air Compressor</option>
+            <option value="DaTo PTIW1011 1&Prime; Heavy Duty Impact Wrench">DaTo PTIW1011 1&Prime; Heavy Duty Impact Wrench</option>
+            <option value="DaTo CSST Screw Air Compressor">DaTo CSST Screw Air Compressor</option>
             <option value="DaTo DHP 2050 Shop Press 50 Ton">DaTo DHP 2050 Shop Press 50 Ton</option>
           </select>
         </label>
