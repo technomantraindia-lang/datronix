@@ -1153,12 +1153,20 @@ button.header-whatsapp {
   font-size: 12px;
   font-weight: 800;
   box-shadow: 0 12px 24px rgba(237, 16, 27, 0.22);
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.socials a[aria-label="Facebook"] {
+  background: #1877f2;
+  box-shadow: 0 12px 24px rgba(24, 119, 242, 0.28);
+}
+
+.socials a[aria-label="Instagram"] {
+  background: linear-gradient(135deg, #f58529 0%, #dd2a7b 45%, #8134af 72%, #515bd4 100%);
+  box-shadow: 0 12px 24px rgba(221, 42, 123, 0.3);
 }
 
 .socials a:hover {
-  color: var(--red);
-  background: #fff;
   transform: translateY(-4px);
 }
 
