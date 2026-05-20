@@ -2,10 +2,37 @@ const navToggle = document.querySelector(".nav-toggle");
 const mainNav = document.querySelector(".main-nav");
 const navDropdowns = document.querySelectorAll(".nav-dropdown");
 const heroVideo = document.querySelector(".hero-video");
+const LEAD_FORM_ACCESS_KEY = "60e456bc-7da3-4123-8204-01a7a0fe804e";
+const LEAD_FORM_ENDPOINT = "https://api.web3forms.com/submit";
 
 if (heroVideo) {
   heroVideo.playbackRate = 0.75;
 }
+
+const submitLeadForm = async (fields) => {
+  const payload = new FormData();
+  payload.append("access_key", LEAD_FORM_ACCESS_KEY);
+  payload.append("from_name", "Datronix Autotech Website");
+  payload.append("subject", fields.subject || "New website inquiry");
+
+  Object.entries(fields).forEach(([key, value]) => {
+    if (key === "subject") return;
+    const cleanValue = String(value || "").trim();
+    if (cleanValue) payload.append(key, cleanValue);
+  });
+
+  const response = await fetch(LEAD_FORM_ENDPOINT, {
+    method: "POST",
+    body: payload
+  });
+
+  const result = await response.json().catch(() => ({}));
+  if (!response.ok || result.success === false) {
+    throw new Error(result.message || "Unable to submit form");
+  }
+
+  return result;
+};
 
 const closeMenu = () => {
   if (!mainNav || !navToggle) return;
@@ -73,7 +100,7 @@ const ensureInquiryModal = () => {
         <p>Tell us what you need. We usually reply quickly on WhatsApp.</p>
       </div>
       <div id="inquiry-modal-success" class="inquiry-modal-success">
-        <p>Thank you. Your inquiry text should open in WhatsApp. If it did not, use the WhatsApp button below.</p>
+        <p>Thank you. Your inquiry has been sent. We will contact you soon.</p>
         <a class="inquiry-modal-wa-link inquiry-modal-after-wa" id="inquiry-wa-after-submit" href="https://wa.me/919724467330" target="_blank" rel="noreferrer noopener">Open WhatsApp</a>
         <button type="button" class="inquiry-modal-done">Close</button>
       </div>
@@ -114,7 +141,7 @@ const ensureInquiryModal = () => {
           <button type="submit" class="inquiry-submit">Send inquiry</button>
           <a class="inquiry-modal-wa-link" id="inquiry-wa-plain" href="https://wa.me/919724467330" target="_blank" rel="noreferrer noopener">WhatsApp</a>
         </div>
-        <p class="inquiry-modal-note">Sending opens WhatsApp with your message prefilled.</p>
+        <p class="inquiry-modal-note">Your inquiry details will be sent to our team by email.</p>
       </form>
     </div>`;
 
@@ -157,13 +184,14 @@ const ensureInquiryModal = () => {
     closeInquiryModal();
   });
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const nameEl = modal.querySelector("#inquiry-name");
     const phoneEl = modal.querySelector("#inquiry-phone");
     const emailEl = modal.querySelector("#inquiry-email");
     const productEl = modal.querySelector("#inquiry-product");
     const msgEl = modal.querySelector("#inquiry-message");
+    const submitButton = modal.querySelector(".inquiry-submit");
     const name = (nameEl.value || "").trim();
     const phone = (phoneEl.value || "").trim();
     const email = (emailEl.value || "").trim();
@@ -185,18 +213,32 @@ const ensureInquiryModal = () => {
       "Message:\n" +
       message;
 
-    let base = activeWaUrl || "https://wa.me/919724467330";
-    try {
-      const u = new URL(base, window.location.href);
-      u.searchParams.set("text", body);
-      window.open(u.toString(), "_blank", "noopener,noreferrer");
-    } catch {
-      const sep = base.includes("?") ? "&" : "?";
-      window.open(base + sep + "text=" + encodeURIComponent(body), "_blank", "noopener,noreferrer");
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
     }
 
-    success.classList.add("is-visible");
-    form.hidden = true;
+    try {
+      await submitLeadForm({
+        subject: "New product inquiry - Datronix Autotech",
+        form_type: "Product inquiry",
+        name,
+        phone,
+        email,
+        product,
+        message,
+        page_url: window.location.href
+      });
+      success.classList.add("is-visible");
+      form.hidden = true;
+    } catch (error) {
+      alert("Sorry, your inquiry could not be sent. Please try again later.");
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = "Send inquiry";
+      }
+    }
   });
 
   modal._resetPanel = () => {
@@ -277,7 +319,18 @@ document.querySelectorAll(".newsletter form, .newsletter-form").forEach((newslet
 });
 
 document.querySelectorAll(".contact-form").forEach((contactForm) => {
-  contactForm.addEventListener("submit", (event) => {
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  const defaultButtonHtml = submitButton?.innerHTML || "Send Message";
+  let status = contactForm.querySelector(".form-status");
+
+  if (!status) {
+    status = document.createElement("p");
+    status.className = "form-status";
+    status.setAttribute("aria-live", "polite");
+    contactForm.appendChild(status);
+  }
+
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     const formData = new FormData(contactForm);
     const name = String(formData.get("name") || "").trim();
@@ -291,24 +344,33 @@ document.querySelectorAll(".contact-form").forEach((contactForm) => {
       return;
     }
 
-    let body =
-      "Name: " +
-      name +
-      "\nEmail: " +
-      email +
-      "\nPhone: " +
-      phone +
-      (product ? "\nProduct: " + product : "") +
-      "\n\nMessage:\n" +
-      message;
+    status.textContent = "";
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.innerHTML = "Sending...";
+    }
 
-    const mailtoHref =
-      "mailto:info@datronixautotech.com?subject=" +
-      encodeURIComponent(subject) +
-      "&body=" +
-      encodeURIComponent(body);
-
-    window.location.href = mailtoHref;
+    try {
+      await submitLeadForm({
+        subject,
+        form_type: "Contact page message",
+        name,
+        email,
+        phone,
+        product,
+        message,
+        page_url: window.location.href
+      });
+      contactForm.reset();
+      status.textContent = "Thank you. Your message has been sent.";
+    } catch (error) {
+      status.textContent = "Sorry, your message could not be sent. Please try again later.";
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.innerHTML = defaultButtonHtml;
+      }
+    }
   });
 });
 
